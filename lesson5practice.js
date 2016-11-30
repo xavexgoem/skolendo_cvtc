@@ -1,63 +1,81 @@
 function bitwise_and(x, y) {
-    return x & y;
+  return x & y;
 }
 
 function bitwise_or(x, y) {
-    return x | y;
+  return x | y;
 }
 
 function bitwise_xor(x, y) {
-    return x ^ y;
+  return x ^ y;
 }
 
 function left_shift(x, y) {
-    return x << y;
+  return x << y;
 }
 
 function right_shift(x, y) {
-    return x >> y;
+  return x >> y;
 }
 
 function remove_substring(fullString, stringToRemove) {
-    return fullString.split(stringToRemove).join('');
+  return fullString.split(stringToRemove).join('');
 }
 
 function im_awesome(numRepetitions) {
-    document.write("I AM AWESOME! ".repeat(numRepetitions));
+  document.write("I AM AWESOME! ".repeat(numRepetitions));
 }
 
 function is_palindrome(potentialPalindrome) {
-    var reversed = potentialPalindrome.split("").reverse().join("");
-    if (reversed == potentialPalindrome) {
-        return true;
-    } else {
-        return false;
-    }
+  var reversed = potentialPalindrome.split("").reverse().join("");
+  if (reversed == potentialPalindrome) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function sort_three(num1, num2, num3) {
-    // ugh, no. We totally did this in pseudocode like the first week in class
-    // and it was painful.
-    var imReallySorrySteve = [num1, num2, num3].sort();
-    return imReallySorrySteve;
+  var sorted = [];
+  if(num1 < num2 && num1 < num3) {
+    if(num2 < num3) {
+      sorted = [num1, num2, num3];
+    } else {
+      sorted = [num1, num3, num2];
+    }
+  } else if (num2 < num1 && num2 < num3) {
+    if(num1 < num3) {
+      sorted = [num2, num1, num3];
+    } else {
+      sorted = [num2, num3, num1];
+    }
+  } else {
+    if(num1 < num2) {
+      sorted = [num3, num1, num2];
+    } else {
+      sorted = [num3, num2, num1];
+    }
+  }
+  return sorted;
 }
 
+
 function letter_grade(score) {
-    if(score < 0 || score > 100) {
-        return "The score needs to be between 0 and 100 inclusive";
-    }
-    switch(true) {
-        case (score > 90):
-            return "A";
-        case (score > 80):
-            return "B";
-        case (score > 70):
-            return "C";
-        case (score > 60):
-            return "D"
-        case (score <= 60):
-                return "F";
-    }
+  if(score < 0 || score > 100) {
+    return "The score needs to be between 0 and 100 inclusive";
+  }
+  switch(true) {
+    case (score > 90):
+      return "A";
+    case (score > 80):
+      return "B";
+    case (score > 70):
+      return "C";
+    case (score > 60):
+      return "D";
+    case (score <= 60):
+        return "F";
+  }
 }
 
 var bitwise1 = prompt('Number #1');
